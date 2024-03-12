@@ -1,4 +1,4 @@
-#1
+#2
  {
   description = "Your new nix config";
 
@@ -16,7 +16,7 @@
     
     # Hardware 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
+   
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 

@@ -14,13 +14,15 @@
     oh-my-zsh = {
       enable = true;
       #custom = ohMyZshCustom.outPath; # Use .outPath to ensure a string path is used
-      theme = "robbyrussell";
+      theme = "agnoster";
       plugins = [ "git" "thefuck" ];
     };
 
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
+      sysconf = "sudo nixos-rebuild switch --flake /etc/nixos#nixos-desktop";
+      homeconf = "home-manager switch --flake /etc/nixos#eternal@nixos-desktop";
+      jvim = "nix run --refresh github:quantumcoded/neovim";
     };
 
     history.size = 10000;

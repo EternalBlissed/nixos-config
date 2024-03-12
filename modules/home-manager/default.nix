@@ -4,6 +4,7 @@
   # List your module files here
   # my-module = import ./my-module.nix;
   git = import ./git.nix;
-  kitty = import ./kitty.nix; # Why...
+  kitty = import ./kitty.nix; 
   shell = import ./shell.nix;
+  neovim = import ./neovim.nix;
 }

@@ -19,6 +19,7 @@
       outputs.homeManagerModules.git
       outputs.homeManagerModules.kitty
       outputs.homeManagerModules.shell
+      outputs.homeManagerModules.neovim
   ];
 
   nixpkgs = {

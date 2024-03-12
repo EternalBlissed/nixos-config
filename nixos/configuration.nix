@@ -133,7 +133,7 @@
     elisa
     gwenview
     kate
-    kwrited
+    #kwrited
     okular
     spectacle
   ];
@@ -168,11 +168,15 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
+  # Why..
+  programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.eternal = {
     isNormalUser = true;
     description = "eternal";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       librewolf
       alacritty
@@ -182,7 +186,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  None for now
+     fira-code
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
