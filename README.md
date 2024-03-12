@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://nixos.org/logo/nixos-hires.png" height=255>
+  <img src="https://0x0.st/HhxH.png" height="255">
 </p>
 
 <h1 align="center">Eternal's NixOS Configs Repository</h1>
