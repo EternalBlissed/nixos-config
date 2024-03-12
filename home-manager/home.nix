@@ -19,6 +19,8 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
       outputs.homeManagerModules.git
+      outputs.homeManagerModules.kitty
+      outputs.homeManagerModules.shell
   ];
 
   nixpkgs = {
