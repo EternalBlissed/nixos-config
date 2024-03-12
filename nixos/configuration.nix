@@ -22,6 +22,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    outputs.nixosModules.plymouth
   ];
 
   nixpkgs = {
@@ -133,7 +134,7 @@
     elisa
     gwenview
     kate
-    #kwrited
+    kwrited
     okular
     spectacle
   ];
@@ -180,6 +181,7 @@
     packages = with pkgs; [
       librewolf
       alacritty
+      lunarvim
     ];
   };
 
@@ -187,6 +189,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      fira-code
+     font-awesome
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
