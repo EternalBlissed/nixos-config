@@ -1,13 +1,13 @@
 #2
  {
-  description = "Your new nix config";
+  description = "Eternal's Nix Flake";
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # OH GOD
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     # Home manager
@@ -16,7 +16,10 @@
     
     # Hardware 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-   
+
+    # Chaotic
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
@@ -30,6 +33,7 @@
     nixpkgs,
     home-manager,
     nixos-hardware,
+    chaotic,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -67,6 +71,7 @@
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
 	  nixos-hardware.nixosModules.dell-xps-13-9360
+    chaotic.nixosModules.default
         ];
       };
     };
