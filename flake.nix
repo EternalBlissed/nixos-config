@@ -20,6 +20,9 @@
     # Chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
+    # NUR
+    nur.url = "github:nix-community/NUR";
+
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
@@ -34,6 +37,7 @@
     home-manager,
     nixos-hardware,
     chaotic,
+    nur,
     ...
   } @ inputs: let
     inherit (self) outputs;

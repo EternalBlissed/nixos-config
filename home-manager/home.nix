@@ -20,6 +20,7 @@
       outputs.homeManagerModules.kitty
       outputs.homeManagerModules.shell
       outputs.homeManagerModules.neovim
+      outputs.homeManagerModules.firefox
   ];
 
   nixpkgs = {

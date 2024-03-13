@@ -458,13 +458,29 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1710303092,
+        "narHash": "sha256-SZ+WcNc1PpCl4OYEKCss1Nahv45SigYx2BLP4mEbZH8=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "762cc7811c582d5d8adcc13430c1f443e3ac6a0f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "chaotic": "chaotic",
         "home-manager": "home-manager_2",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-stable": "nixpkgs-stable_2"
+        "nixpkgs-stable": "nixpkgs-stable_2",
+        "nur": "nur"
       }
     },
     "rust-analyzer-src": {

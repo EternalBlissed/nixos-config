@@ -139,6 +139,9 @@
     spectacle
   ];
 
+  # Polkit for Sway
+  security.polkit.enable = true;
+
   # Configure keymap in X11
   services.xserver = {
     layout = "au";
@@ -179,8 +182,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      librewolf
-      alacritty
       lunarvim
     ];
   };

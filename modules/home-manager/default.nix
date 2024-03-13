@@ -7,4 +7,5 @@
   kitty = import ./kitty.nix; 
   shell = import ./shell.nix;
   neovim = import ./neovim.nix;
+  firefox = import ./firefox.nix;
 }
