@@ -1,38 +1,26 @@
-{ config, lib, pkgs, self, ... }:
-let
-  inherit (self.lib)
-    buildFirefoxXpiAddon
-    ;
+{ config, lib, pkgs, self, inputs, ... }:
 
-  inherit (lib)
-    mkEnableOption
-    mkIf
-    ;
-
-  cfg = config.base.firefox;
-in
 {
-  options.base.firefox = {
-    enable = mkEnableOption "Firefox";
-  };
-
-  config = mkIf cfg.enable {
     programs.firefox = {
       enable = true;
 
       profiles.default = {
         extensions =
-          with pkgs.nur.repos.rycee.firefox-addons;
-          with customAddons;
+        with inputs.firefox-addons.packages."x86_64-linux"; # ROUGH AS FUCK IMPLEMENTATION
           [
             darkreader
-            return-youtube-dislikes
-            sponsorblock
-            tree-style-tab
+            firefox-color
+            violentmonkey
             ublock-origin
-            web-scrobbler
+            clearurls
+            user-agent-string-switcher
+            search-by-image
+            stylus
+            tabliss
+            disable-javascript
+            buster-captcha-solver
+            localcdn
           ];
-
         settings = {
           # Don't save passwords.
           "signon.rememberSignons" = false;
@@ -69,7 +57,8 @@ in
           "browser.theme.toolbar-theme" = 2;
         };
       };
-    };
-  };
+    }; 
 }
+
+
 

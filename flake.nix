@@ -1,17 +1,17 @@
-#2
  {
   description = "Eternal's Nix Flake";
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # OH GOD
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     
     # Hardware 
@@ -22,6 +22,9 @@
 
     # NUR
     nur.url = "github:nix-community/NUR";
+
+    # Firefox Addons
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
@@ -34,10 +37,12 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     home-manager,
     nixos-hardware,
     chaotic,
     nur,
+    firefox-addons,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -74,8 +79,9 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
-	  nixos-hardware.nixosModules.dell-xps-13-9360
-    chaotic.nixosModules.default
+	        nixos-hardware.nixosModules.dell-xps-13-9360
+          chaotic.nixosModules.default
+          nur.nixosModules.nur
         ];
       };
     };
@@ -86,7 +92,7 @@
       # FIXME replace with your username@hostname
       "eternal@nixos-desktop" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
+        extraSpecialArgs = {inherit inputs outputs nixpkgs;};
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix

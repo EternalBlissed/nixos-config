@@ -139,9 +139,6 @@
     spectacle
   ];
 
-  # Polkit for Sway
-  security.polkit.enable = true;
-
   # Configure keymap in X11
   services.xserver = {
     layout = "au";

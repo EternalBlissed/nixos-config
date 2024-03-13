@@ -4,6 +4,7 @@
   lib,
   config,
   pkgs,
+  nur,
   ...
 }: {
   # You can import other home-manager modules here
