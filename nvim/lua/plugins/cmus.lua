@@ -1,3 +1,0 @@
-return {
-  "azadkuh/vim-cmus",
-}

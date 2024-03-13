@@ -180,6 +180,8 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
       lunarvim
+      obsidian
+      slack
     ];
   };
 

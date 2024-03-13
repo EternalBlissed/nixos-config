@@ -22,6 +22,7 @@
       outputs.homeManagerModules.shell
       outputs.homeManagerModules.neovim
       outputs.homeManagerModules.firefox
+      outputs.homeManagerModules.vscode
   ];
 
   nixpkgs = {

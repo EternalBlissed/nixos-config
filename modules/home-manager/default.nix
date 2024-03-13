@@ -8,4 +8,5 @@
   shell = import ./shell.nix;
   neovim = import ./neovim.nix;
   firefox = import ./firefox.nix;
+  vscode = import ./vscode.nix;
 }
