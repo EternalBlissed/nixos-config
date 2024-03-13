@@ -9,4 +9,5 @@
   neovim = import ./neovim.nix;
   firefox = import ./firefox.nix;
   vscode = import ./vscode.nix;
+  btop = import ./btop.nix;
 }

@@ -182,6 +182,14 @@
       lunarvim
       obsidian
       slack
+      spotify-qt
+      obs-studio
+      bitwarden-desktop
+      gimp
+      vesktop
+      audacity
+      skypeforlinux
+      weechat
     ];
   };
 
