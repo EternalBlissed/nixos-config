@@ -1,21 +1,22 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    thefuck
-  ];
+  #home.packages = with pkgs; [
+  #  
+  #];
 
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
     syntaxHighlighting.enable = true;    
+    #initExtra = "";
 
     oh-my-zsh = {
       enable = true;
       #custom = ohMyZshCustom.outPath; # Use .outPath to ensure a string path is used
       theme = "agnoster";
-      plugins = [ "git" "thefuck" ];
+      plugins = [ "git" ];
     };
 
     shellAliases = {
@@ -29,3 +30,4 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
   };
 }
+
